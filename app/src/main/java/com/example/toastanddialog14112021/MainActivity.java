@@ -1,7 +1,9 @@
 package com.example.toastanddialog14112021;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,6 +40,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 toast.show();
                 break;
             case R.id.dialog:
+                // Create the object of AlertDialog Builder class
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                // Set the message show
+                builder.setMessage("Message  to be show");
+                // Set Alert Title
+                builder.setTitle("Alert !");
+                // Set Cancelable false for when the user clicks on the outside the Dialog Box then it will remain show
+                builder.setCancelable(false);
+                builder.setPositiveButton("Positive Button",new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int asdf)
+                    {
+                        finish();
+                    }
+                });
+                builder.setNegativeButton("Negative Button",new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+                        dialog.cancel();
+                    }});
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
                 break;
             case R.id.customToast:
                 LayoutInflater layoutInflater = getLayoutInflater();
@@ -51,7 +78,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 myToast.setDuration(Toast.LENGTH_LONG);
                 myToast.setView(myLayout);
                 myToast.show();
-
                 break;
             case R.id.customDialog:
                 break;
