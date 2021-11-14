@@ -39,11 +39,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Toast toast =  Toast.makeText(this, "Toast Text", Toast.LENGTH_LONG);
                 toast.show();
                 break;
+
             case R.id.dialog:
                 // Create the object of AlertDialog Builder class
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 // Set the message show
-                builder.setMessage("Message  to be show");
+                builder.setMessage("This is dialog.");
                 // Set Alert Title
                 builder.setTitle("Alert !");
                 // Set Cancelable false for when the user clicks on the outside the Dialog Box then it will remain show
@@ -66,9 +67,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 AlertDialog alertDialog = builder.create();
                 alertDialog.show();
                 break;
+
             case R.id.customToast:
                 LayoutInflater layoutInflater = getLayoutInflater();
-                View myLayout=layoutInflater.inflate(R.layout.custom_layout,(ViewGroup)findViewById(R.id.cusToast) );
+                View myLayout=layoutInflater.inflate(R.layout.custom_layout,(ViewGroup)findViewById(R.id.mainActivity) );
 
 //                ImageView cameraIamge=myLayout.findViewById(R.id.imageViewCamera);
 //                cameraIamge.setImageResource(R.drawable.ic_baseline_local_see_24);
@@ -79,6 +81,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 myToast.setView(myLayout);
                 myToast.show();
                 break;
+
             case R.id.customDialog:
                 break;
         }
