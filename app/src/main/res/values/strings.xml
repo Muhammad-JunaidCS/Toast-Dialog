@@ -6,4 +6,6 @@
     <string name="show_custom_dialog">Show Custom Dialog</string>
     <string name="todo">TODO</string>
     <string name="camera">Camera</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
 </resources>

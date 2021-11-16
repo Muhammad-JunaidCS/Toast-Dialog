@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.customToast:
                 LayoutInflater layoutInflater = getLayoutInflater();
-                View myLayout=layoutInflater.inflate(R.layout.custom_layout,(ViewGroup)findViewById(R.id.mainActivity) );
+                View myLayout=layoutInflater.inflate(R.layout.custom_layout,(ViewGroup)findViewById(R.id.cusToast) );
 
 //                ImageView cameraIamge=myLayout.findViewById(R.id.imageViewCamera);
 //                cameraIamge.setImageResource(R.drawable.ic_baseline_local_see_24);
@@ -83,6 +83,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.customDialog:
+                LayoutInflater layoutInflater1=getLayoutInflater();
+//                View myLayout1=layoutInflater1.inflate(R.layout.dialog_custom_layout,(ViewGroup) findViewById(R.id.customDialog));
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
+                LayoutInflater inflater = this.getLayoutInflater();
+                builder1.setView(inflater.inflate(R.layout.dialog_custom_layout, null))
+                        .setPositiveButton("Sign In",new DialogInterface.OnClickListener()
+                        {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which)
+                            {
+
+                            }
+                        })
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener()
+                        {
+                            public void onClick(DialogInterface dialog, int id)
+                            {
+
+                            }
+                        });
+                AlertDialog dialog  = builder1.create();
+                dialog.show();
                 break;
         }
     }
